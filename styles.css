@@ -22,17 +22,31 @@ header {
   margin-left: 20px;
 }
 nav {
-  background-color: white;
-  padding: 10px;
-  border-radius: 20px;
-  display: inline-block;
+  border-radius: 5px;
+  display: flex;
 }
-nav a {
-  color: black;
+nav div a{
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
 }
+nav a {
+  text-decoration: none;
+  color: white; 
+}
+nav div {
+  padding: 10px;
+  margin: 5px; 
+  border-radius: 5px;
+  text-align: center;
+  border: white 1px solid;
+  padding: 15px 30px;
+}
+nav div:hover {
+  background-color: #ddd; 
+  color: black;
+}
+
 .hero {
   padding: 50px;
   background: linear-gradient(to right, black, white);
