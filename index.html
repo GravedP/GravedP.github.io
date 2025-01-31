@@ -1,83 +1,134 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> IT-Flow Solutions</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT - Flow Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: black;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            margin-left: 20px;
+        }
+        nav {
+            background-color: white;
+            padding: 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        nav a {
+            color: black;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .hero {
+            padding: 50px;
+            background: linear-gradient(to right, black, white);
+            color: black;
+        }
+        .content {
+            margin: 50px auto;
+            padding: 20px;
+            max-width: 800px;
+            background-color: #333;
+            border-radius: 10px;
+            border: 1px solid black;
+            color: white;
+        }
+        button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: grey;
+        }
+        footer {
+                position: fixed;
+                bottom: 0;
+                padding: 20px;
+                background-color: black;
+                color: white;
+                width: 100%;
+                box-sizing: border-box;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1 style="line-height: 35px;"> IT-Flow <br> Solutions</h1>
-      <nav>
-        <ul>
-          <li><a href="#home">Startseite</a></li>
-          <li><a href="#services">Dienstleistungen</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#about">Über uns</a></li>
-          <li><a href="#contact">Kontakt</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <header>
+        <div class="logo">IT - Flow 
+                <br>
+                Solutions
 
-  <section id="home" class="hero">
-    <div class="container">
-      <h2>Individuelle Webdesign-Lösungen für Ihr Business</h2>
-      <a href="#contact" class="cta-button">Jetzt anfragen</a>
-    </div>
-  </section>
-
-  <section id="services" class="services">
-    <div class="container">
-      <h2>Unsere Dienstleistungen</h2>
-      <div class="service-list">
-        <div class="service-item">
-          <h3>Webdesign</h3>
-          <p>Moderne und benutzerfreundliche Websites.</p>
         </div>
-        <div class="service-item">
-          <h3>UX/UI Design</h3>
-          <p>Optimierte Benutzererfahrung und Interfaces.</p>
-        </div>
-        <div class="service-item">
-          <h3>SEO-Optimierung</h3>
-          <p>Bessere Sichtbarkeit in Suchmaschinen.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+        <nav>
+            <a href="#home" onclick="showPage('home')">Startseite</a>
+            <a href="#about" onclick="showPage('about')">Über uns</a>
+            <a href="#services" onclick="showPage('services')">Leistungen</a>
+            <a href="#contact" onclick="showPage('contact')">Kontakt</a>
+        </nav>
+    </header>
+    <section id="home" class="hero">
+        <h2>Innovative Lösungen für Ihr Unternehmen</h2>
+        <p>Wir bieten maßgeschneiderte Lösungen für Ihre geschäftlichen Herausforderungen.</p>
+        <button id="actionButton">Mehr erfahren</button>
+    </section>
+    <main>
+        <section id="about" class="content hidden">
+            <h2>Über uns</h2>
+            <p>IT - Flow Solutions ist ein führender Anbieter von hochwertigen Dienstleistungen und Produkten.</p>
+        </section>
+        <section id="services" class="content hidden">
+            <h2>Unsere Leistungen</h2>
+            <p>Wir bieten IT-Beratung, Softwareentwicklung und maßgeschneiderte Lösungen für Ihr Unternehmen.</p>
+        </section>
+        <section id="contact" class="content hidden">
+            <h2>Kontakt</h2>
+            <p>Erreichen Sie uns per E-Mail unter info@it-flowsolutions.com oder telefonisch unter 0123-456789.</p>
+        </section>
+    </main>
+    <script>
+        document.getElementById("actionButton").addEventListener("click", function() {
+            alert("Danke für Ihr Interesse! Wir melden uns bald bei Ihnen.");
+        });
 
- 
-
-  <section id="about" class="about">
-    <div class="container">
-      <h2>Über uns</h2>
-      <p>Wir sind ein Team von Webdesign-Experten, die leidenschaftlich daran arbeiten, maßgeschneiderte Lösungen für unsere Kunden zu schaffen.</p>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Kontakt</h2>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">E-Mail:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Nachricht:</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit">Senden</button>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2023 Webdesign Dienstleistungen. Alle Rechte vorbehalten.</p>
-    </div>
-  </footer>
+        function showPage(pageId) {
+            document.querySelectorAll(".content, .hero").forEach(section => {
+                section.classList.add("hidden");
+            });
+            document.getElementById(pageId).classList.remove("hidden");
+        }
+    </script>
+    <footer>
+        <p>&copy; 2025 IT - Flow Solutions | Alle Rechte vorbehalten</p>
+    </footer>
+    
 </body>
 </html>
