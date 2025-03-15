@@ -1,77 +1,27 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT - Flow Solutions</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <header>
-        <div class="header2">
-            <div class="logo">IT - Flow 
-                <br>
-                Solutions
-
-        </div>
         <nav>
-          <a href="index.html" name="startseite">
-            <div>Startseite</div>
-          </a>
-          <a href="/navbar/ueberuns.html">
-            <div>Über uns</div>
-          </a>
-          <a href="/navbar/leistungen.html">
-            <div>Leistungen</div>
-          </a>
-          <a href="/navbar/kontakt.html">
-            <div>Kontakt</div>
-          </a>
-          <a href="/navbar/portfolio.html">
-            <div>Portfolio</div>
-          </a>
+            <p>IT-Flow <br>Solutions</p>
+            <ul>
+                <li>Startseite</li>
+                <li>Über Uns</li>
+                <li>Leistungen</li>
+                <li>Kontakt</li>
+                <li>Portfolio</li>
+            </ul>
         </nav>
-        </div>
-        
-        
-        <div id="home" class="hero">
-            <h2>Innovative Lösungen für Ihr Unternehmen</h2>
-            <p>Wir bieten maßgeschneiderte Lösungen für Ihre geschäftlichen Herausforderungen.</p>
-            <button id="actionButton">Mehr erfahren</button>
-        </div>
-
-
+        <div id="bearbeitung"><p><h1>Die Seite befindet sich noch in Bearbeitung</h1></p></div>
     </header>
-    <main>
-        <section id="about" class="content hidden">
-            <h2>Über uns</h2>
-            <p>IT - Flow Solutions ist ein führender Anbieter von hochwertigen Dienstleistungen und Produkten.</p>
-        </section>
-        <section id="services" class="content hidden">
-            <h2>Unsere Leistungen</h2>
-            <p>Wir bieten IT-Beratung, Softwareentwicklung und maßgeschneiderte Lösungen für Ihr Unternehmen.</p>
-        </section>
-        <section id="contact" class="content hidden">
-            <h2>Kontakt</h2>
-            <p>Erreichen Sie uns per E-Mail unter info@it-flowsolutions.com oder telefonisch unter 0123-456789.</p>
-        </section>
-    </main>
-    <script>
-        document.getElementById("actionButton").addEventListener("click", function() {
-            alert("Danke für Ihr Interesse! Wir melden uns bald bei Ihnen.");
-        });
-
-        function showPage(pageId) {
-            document.querySelectorAll(".content, .hero").forEach(section => {
-                section.classList.add("hidden");
-            });
-            document.getElementById(pageId).classList.remove("hidden");
-        }
-    </script>
-    <footer>
-        <p>&copy; 2025 IT - Flow Solutions | Alle Rechte vorbehalten</p>
-        <a href="/navbar/impressum.html">Impressum und Datenschutz</a>
-    </footer>
-    
 </body>
+
 </html>
