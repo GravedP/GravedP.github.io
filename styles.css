@@ -76,3 +76,14 @@ margin: 0 0 0 147px;
   letter-spacing: 0.3px;
   line-height: 25px;
 }
+
+#ueberarbeitung{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  font-family: var(--primary);
+  font-weight: 700;
+  font-size: 60px;
+  justify-content: center;
+  align-items: center;
+}
