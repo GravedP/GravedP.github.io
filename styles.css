@@ -10,7 +10,6 @@
 
 
 body{
-  overflow: hidden;
   background-color: #F5F5F5;
 }
 header{
@@ -79,6 +78,8 @@ margin: 0 0 0 147px;
 }
 
 #ueberarbeitung{
+  position: absolute;
+  visibility: hidden;
   display: flex;
   width: 100vw;
   height: 100vh;
