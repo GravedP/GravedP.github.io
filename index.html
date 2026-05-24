@@ -169,6 +169,103 @@
   </div>
 </section>
 
+
+<section class="kontakt-sec" id="kontakt">
+  <div class="kontakt-inner">
+    <h2>Kontakt aufnehmen</h2>
+    <p class="sub">Schreib uns – wir melden uns in der Regel innerhalb von 24 Stunden.</p>
+
+    <!-- Erfolgs- / Fehlermeldung -->
+    <div class="form-feedback success" id="form-success" style="display:none">
+      ✅ Vielen Dank! Deine Nachricht ist bei uns angekommen. Wir melden uns bald.
+    </div>
+    <div class="form-feedback error" id="form-error" style="display:none">
+      ❌ Etwas ist schiefgelaufen. Bitte versuche es erneut oder schreib uns direkt an
+      <a href="mailto:danny.h@it-flowsolutions.de">danny.h@it-flowsolutions.de</a>.
+    </div>
+
+    <form class="kontakt-form" id="kontakt-form">
+      <!-- Web3Forms Access Key -->
+      <input type="hidden" name="access_key" value="751fdd83-724f-40f1-9c2c-030620aa39ab">
+      <!-- Seitenname für Web3Forms Dashboard -->
+      <input type="hidden" name="subject" value="Neue Anfrage – IT-Flow Solutions">
+      <!-- Honeypot Spam-Schutz -->
+      <input type="checkbox" name="botcheck" style="display:none">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" placeholder="Max Mustermann" required />
+        </div>
+        <div class="form-group">
+          <label for="email">E-Mail *</label>
+          <input type="email" id="email" name="email" placeholder="max@beispiel.de" required />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="betreff">Ich interessiere mich für</label>
+        <select id="betreff" name="betreff">
+          <option value="">– Bitte wählen –</option>
+          <option value="Nur Design">Nur Design</option>
+          <option value="Design & Programmierung">Design &amp; Programmierung</option>
+          <option value="Beratung">Erstberatung / Fragen</option>
+          <option value="Sonstiges">Sonstiges</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="nachricht">Nachricht *</label>
+        <textarea id="nachricht" name="nachricht" placeholder="Erzähl uns von deinem Projekt – je mehr Details, desto besser können wir helfen." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submit-btn">
+        Nachricht absenden
+      </button>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.getElementById('kontakt-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const btn     = document.getElementById('submit-btn');
+    const success = document.getElementById('form-success');
+    const error   = document.getElementById('form-error');
+
+    // Reset
+    success.style.display = 'none';
+    error.style.display   = 'none';
+    btn.disabled    = true;
+    btn.textContent = 'Wird gesendet…';
+
+    const formData = new FormData(this);
+    const data     = Object.fromEntries(formData);
+
+    try {
+      const res  = await fetch('https://api.web3forms.com/submit', {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body:    JSON.stringify(data)
+      });
+      const json = await res.json();
+
+      if (json.success) {
+        success.style.display = 'block';
+        this.reset();
+      } else {
+        error.style.display = 'block';
+      }
+    } catch {
+      error.style.display = 'block';
+    }
+
+    btn.disabled    = false;
+    btn.textContent = 'Nachricht absenden';
+  });
+</script>
+
 <!-- CTA BANNER -->
 <section class="cta-sec" id="kontakt">
   <div class="cta-bg"></div>
