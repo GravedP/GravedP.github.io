@@ -2,6 +2,38 @@
    IT-Flow Solutions – Shared Stylesheet
    ============================================= */
 
+/* ─── LOCAL FONTS (DSGVO-konform, kein Google-Server-Kontakt) ─── */
+@font-face {
+  font-family: 'Merriweather Sans';
+  src: url('fonts/merriweather-sans-latin-700-normal.woff2') format('woff2');
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Merriweather Sans';
+  src: url('fonts/merriweather-sans-latin-800-normal.woff2') format('woff2');
+  font-weight: 800; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('fonts/public-sans-latin-300-normal.woff2') format('woff2');
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('fonts/public-sans-latin-400-normal.woff2') format('woff2');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('fonts/public-sans-latin-600-normal.woff2') format('woff2');
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'Platypi';
+  src: url('fonts/platypi-latin-700-italic.woff2') format('woff2');
+  font-weight: 700; font-style: italic; font-display: swap;
+}
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -202,3 +234,78 @@ input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 20px;
   .r-result { flex-direction: column; }
   .cards-grid { grid-template-columns: 1fr; }
 }
+
+
+/* =============================================
+   DATENSCHUTZ PAGE STYLES
+   ============================================= */
+
+.dse-wrap {
+  max-width: 860px; margin: 0 auto;
+  padding: 64px var(--pad) 80px;
+}
+.dse-wrap h1 {
+  font-family: var(--f-primary); font-weight: 700;
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  color: var(--navy); margin-bottom: 8px;
+}
+.dse-wrap .stand {
+  font-family: var(--f-secondary); font-weight: 300;
+  font-size: .85rem; color: var(--text-muted); margin-bottom: 40px;
+}
+.dse-wrap ul.index {
+  background: var(--gray-bg); border-radius: 8px;
+  padding: 20px 24px; margin-bottom: 48px; list-style: none;
+}
+.dse-wrap ul.index li { margin-bottom: 6px; }
+.dse-wrap ul.index a {
+  font-family: var(--f-secondary); font-weight: 400;
+  font-size: .9rem; color: var(--navy); text-decoration: none; transition: color .2s;
+}
+.dse-wrap ul.index a:hover { color: var(--gold); }
+.dse-wrap h2 {
+  font-family: var(--f-primary); font-weight: 700;
+  font-size: 1.05rem; color: var(--navy);
+  margin: 40px 0 12px; padding-bottom: 8px;
+  border-bottom: 2px solid var(--gold); display: inline-block;
+}
+.dse-wrap h3 {
+  font-family: var(--f-primary); font-weight: 700;
+  font-size: .92rem; color: var(--navy); margin: 24px 0 8px;
+}
+.dse-wrap p {
+  font-family: var(--f-secondary); font-weight: 300;
+  font-size: .9rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 12px;
+}
+.dse-wrap a { color: var(--navy); font-weight: 400; text-decoration: underline; transition: color .2s; }
+.dse-wrap a:hover { color: var(--gold); }
+.dse-wrap strong { font-weight: 600; color: var(--text); }
+.dse-wrap ul:not(.index):not(.m-elements):not(.glossary) { margin: 8px 0 12px 20px; }
+.dse-wrap ul:not(.index) li {
+  font-family: var(--f-secondary); font-weight: 300;
+  font-size: .9rem; line-height: 1.75; color: var(--text-muted); margin-bottom: 5px;
+}
+.dse-wrap ul.m-elements { list-style: none; margin: 12px 0; }
+.dse-wrap ul.m-elements li {
+  font-family: var(--f-secondary); font-weight: 300;
+  font-size: .88rem; line-height: 1.75; color: var(--text-muted);
+  margin-bottom: 8px; padding-left: 12px; border-left: 2px solid rgba(26,46,90,.12);
+}
+.dse-wrap ul.glossary { list-style: none; margin: 12px 0; }
+.dse-wrap ul.glossary li {
+  font-family: var(--f-secondary); font-weight: 300;
+  font-size: .88rem; line-height: 1.75; color: var(--text-muted);
+  margin-bottom: 14px; padding: 12px 16px;
+  background: var(--gray-bg); border-radius: 6px;
+}
+.dse-wrap p.seal {
+  margin-top: 48px; padding-top: 24px;
+  border-top: 1px solid #e2e8f0; font-size: .8rem; color: var(--text-muted);
+}
+.dse-notice {
+  background: #fff8e6; border: 1.5px solid var(--gold);
+  border-radius: 8px; padding: 16px 20px; margin-bottom: 32px;
+  font-family: var(--f-secondary); font-weight: 400;
+  font-size: .88rem; line-height: 1.7; color: var(--text);
+}
+.dse-notice strong { color: var(--navy); }
